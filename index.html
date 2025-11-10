@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Research Peptides Tier List - Ranked by Potential Results</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            padding: 40px 20px;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+        
+        h1 {
+            text-align: center;
+            color: #1e3c72;
+            margin-bottom: 10px;
+            font-size: 2.5em;
+            font-weight: 700;
+        }
+        
+        .subtitle {
+            text-align: center;
+            color: #666;
+            margin-bottom: 40px;
+            font-size: 1.1em;
+        }
+        
+        .tier {
+            margin-bottom: 25px;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        
+        .tier-header {
+            padding: 15px 25px;
+            font-weight: 700;
+            font-size: 1.4em;
+            color: white;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .tier-label {
+            min-width: 60px;
+            text-align: center;
+            background: rgba(255,255,255,0.2);
+            padding: 5px 15px;
+            border-radius: 8px;
+            font-size: 1.2em;
+        }
+        
+        .s-tier .tier-header {
+            background: linear-gradient(135deg, #ff6b6b 0%, #ee5a6f 100%);
+        }
+        
+        .a-tier .tier-header {
+            background: linear-gradient(135deg, #f39c12 0%, #e67e22 100%);
+        }
+        
+        .b-tier .tier-header {
+            background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
+        }
+        
+        .c-tier .tier-header {
+            background: linear-gradient(135deg, #2ecc71 0%, #27ae60 100%);
+        }
+        
+        .d-tier .tier-header {
+            background: linear-gradient(135deg, #9b59b6 0%, #8e44ad 100%);
+        }
+        
+        .tier-content {
+            background: #f8f9fa;
+            padding: 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+        }
+        
+        .peptide-card {
+            background: white;
+            padding: 15px;
+            border-radius: 10px;
+            border-left: 4px solid;
+            transition: transform 0.2s, box-shadow 0.2s;
+            cursor: pointer;
+        }
+        
+        .peptide-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+        }
+        
+        .s-tier .peptide-card {
+            border-color: #ff6b6b;
+        }
+        
+        .a-tier .peptide-card {
+            border-color: #f39c12;
+        }
+        
+        .b-tier .peptide-card {
+            border-color: #3498db;
+        }
+        
+        .c-tier .peptide-card {
+            border-color: #2ecc71;
+        }
+        
+        .d-tier .peptide-card {
+            border-color: #9b59b6;
+        }
+        
+        .peptide-name {
+            font-weight: 700;
+            font-size: 1.1em;
+            color: #2c3e50;
+            margin-bottom: 8px;
+        }
+        
+        .peptide-benefits {
+            font-size: 0.9em;
+            color: #666;
+            line-height: 1.4;
+        }
+        
+        .legend {
+            margin-top: 40px;
+            padding: 25px;
+            background: #f8f9fa;
+            border-radius: 12px;
+            border-left: 5px solid #1e3c72;
+        }
+        
+        .legend h3 {
+            color: #1e3c72;
+            margin-bottom: 15px;
+            font-size: 1.3em;
+        }
+        
+        .legend-item {
+            margin-bottom: 10px;
+            padding-left: 20px;
+            position: relative;
+        }
+        
+        .legend-item:before {
+            content: "▶";
+            position: absolute;
+            left: 0;
+            color: #1e3c72;
+        }
+        
+        .disclaimer {
+            margin-top: 30px;
+            padding: 20px;
+            background: #fff3cd;
+            border-left: 5px solid #ffc107;
+            border-radius: 8px;
+            font-size: 0.95em;
+            color: #856404;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+            }
+            
+            h1 {
+                font-size: 1.8em;
+            }
+            
+            .tier-content {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🧬 Research Peptides Tier List</h1>
+        <p class="subtitle">30+ Peptides Ranked by Potential Results & Clinical Evidence</p>
+        
+        <!-- S-TIER: Game Changers -->
+        <div class="tier s-tier">
+            <div class="tier-header">
+                <div class="tier-label">S</div>
+                <span>Elite Tier - The Clinical Gold Standards</span>
+            </div>
+            <div class="tier-content">
+                <div class="peptide-card">
+                    <div class="peptide-name">BPC-157</div>
+                    <div class="peptide-benefits">The "elite repair crew" - tissue healing, gut sealing, angiogenesis, inflammation control. 16,000+ documented cases.</div>
+                </div>
+                <div class="peptide-card">
+                    <div class="peptide-name">TB-500</div>
+                    <div class="peptide-benefits">The "general contractor" - actin assembly, systemic healing, stem cell migration, cellular reconstruction. Works better than full TB4.</div>
+                </div>
+                <div class="peptide-card">
+                    <div class="peptide-name">Retatrutide</div>
+                    <div class="peptide-benefits">Triple agonist (GLP-1 + GIP + Glucagon) - 24-26% weight loss, preserves lean mass, 20-25% energy boost. The ONLY GLP-1 worth using.</div>
+                </div>
+                <div class="peptide-card">
+                    <div class="peptide-name">GHK-Cu</div>
+                    <div class="peptide-benefits">The "supply trucks" - delivers collagen, elastin, raw materials. Skin regeneration, wound healing, tissue building.</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- A-TIER: High Performance -->
+        <div class="tier a-tier">
+            <div class="tier-header">
+                <div class="tier-label">A</div>
+                <span>High Performance - Proven Clinical Impact</span>
+            </div>
+            <div class="tier-content">
+                <div class="peptide-card">
+                    <div class="peptide-name">SS-31 (Elamipretide)</div>
+                    <div class="peptide-benefits">Mitochondrial healer - cardiolipin protection, prevents electron leak, organ repair, cardiac/renal protection</div>
+                </div>
+                <div class="peptide-card">
+                    <div class="peptide-name">MOTS-C</div>
+                    <div class="peptide-benefits">Fuel delivery optimizer - insulin sensitivity, AMPK activation, metabolic health, mitochondrial function</div>
+                </div>
+                <div class="peptide-card">
+                    <div class="peptide-name">CJC-1295/Ipamorelin</div>
+                    <div class="peptide-benefits">Growth hormone optimization - muscle growth, fat loss, recovery, sleep quality, amplifies BPC/TB effects</div>
+                </div>
+                <div class="peptide-card">
+                    <div class="peptide-name">Thymosin Alpha-1</div>
+                    <div class="peptide-benefits">Immune commander - T-cell activation, infection defense, autoimmune modulation, clinical validation</div>
+                </div>
+                <div class="peptide-card">
+                    <div class="peptide-name">Epithalon</div>
+                    <div class="peptide-benefits">Longevity peptide - telomere extension, circadian optimization, pineal function, melatonin regulation</div>
+                </div>
+                <div class="peptide-card">
+                    <div class="peptide-name">Cerebrolysin</div>
+                    <div class="peptide-benefits">Neuroprotective powerhouse - stroke recovery, TBI repair, Alzheimer's/dementia support, neurogenesis, 200+ clinical trials</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- B-TIER: Solid Performers -->
+        <div class="tier b-tier">
+            <div class="tier-header">
+                <div class="tier-label">B</div>
+                <span>Solid Performers - Proven for Specific Applications</span>
+            </div>
+            <div class="tier-content">
+                <div class="peptide-card">
+                    <div class="peptide-name">Tirzepatide (Mounjaro/Zepbound)</div>
+                    <div class="peptide-benefits">Dual agonist GLP-1 - 20-22% weight loss BUT causes 40% lean mass loss. Medieval medicine with great marketing. Retatrutide is superior.</div>
+                </div>
+                <div class="peptide-card">
+                    <div class="peptide-name">Semaglutide (Ozempic/Wegovy)</div>
+                    <div class="peptide-benefits">Single GLP-1 agonist - 15-17% weight loss BUT causes 40% lean mass loss, brutal rebound, metabolic slowdown. Trash compared to Retatrutide.</div>
+                </div>
+                <div class="peptide-card">
+                    <div class="peptide-name">Semax</div>
+                    <div class="peptide-benefits">Cognitive enhancer - BDNF increase, neuroprotection, focus, mental clarity, stress adaptation</div>
+                </div>
+                <div class="peptide-card">
+                    <div class="peptide-name">Selank</div>
+                    <div class="peptide-benefits">Anxiolytic - anxiety reduction, cognitive support, immune modulation, stress resilience</div>
+                </div>
+                <div class="peptide-card">
+                    <div class="peptide-name">Tesamorelin</div>
+                    <div class="peptide-benefits">Body composition specialist - visceral fat reduction, GH release, metabolic optimization</div>
+                </div>
+                <div class="peptide-card">
+                    <div class="peptide-name">MK-677 (Ibutamoren)</div>
+                    <div class="peptide-benefits">Oral GH secretagogue - appetite increase, sleep enhancement, recovery support, convenient dosing</div>
+                </div>
+                <div class="peptide-card">
+                    <div class="peptide-name">AOD-9604</div>
+                    <div class="peptide-benefits">GH fragment - fat oxidation, metabolism boost, cartilage repair potential</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- C-TIER: Niche Applications -->
+        <div class="tier c-tier">
+            <div class="tier-header">
+                <div class="tier-label">C</div>
+                <span>Specialized Tools - Effective for Targeted Use Cases</span>
+            </div>
+            <div class="tier-content">
+                <div class="peptide-card">
+                    <div class="peptide-name">PT-141 (Bremelanotide)</div>
+                    <div class="peptide-benefits">Sexual health - FDA-approved libido enhancement, melanocortin agonist (both sexes)</div>
+                </div>
+                <div class="peptide-card">
+                    <div class="peptide-name">DSIP</div>
+                    <div class="peptide-benefits">Sleep optimizer - delta wave enhancement, stress adaptation, recovery support</div>
+                </div>
+                <div class="peptide-card">
+                    <div class="peptide-name">KPV</div>
+                    <div class="peptide-benefits">Anti-inflammatory specialist - IBD support, gut healing, mast cell stabilization</div>
+                </div>
+                <div class="peptide-card">
+                    <div class="peptide-name">LL-37</div>
+                    <div class="peptide-benefits">Antimicrobial peptide - immune defense, wound healing, pathogen protection</div>
+                </div>
+                <div class="peptide-card">
+                    <div class="peptide-name">GHRP-2</div>
+                    <div class="peptide-benefits">GH pulse - growth hormone release, appetite increase, older generation secretagogue</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- D-TIER: Emerging Research -->
+        <div class="tier d-tier">
+            <div class="tier-header">
+                <div class="tier-label">D</div>
+                <span>Emerging Research - Limited Data or Experimental Status</span>
+            </div>
+            <div class="tier-content">
+                <div class="peptide-card">
+                    <div class="peptide-name">BAM-15</div>
+                    <div class="peptide-benefits">Proton uncoupler - fat loss through heat dissipation, body recomp agent, mitochondrial stress inducer</div>
+                </div>
+                <div class="peptide-card">
+                    <div class="peptide-name">SLU-PP-332</div>
+                    <div class="peptide-benefits">ERR agonist - performance peptide, can overspin mitochondria, requires SS-31 protection</div>
+                </div>
+                <div class="peptide-card">
+                    <div class="peptide-name">5-Amino-1MQ</div>
+                    <div class="peptide-benefits">NNMT inhibitor - NAD+ optimization, metabolic enhancement, fat loss mechanism</div>
+                </div>
+                <div class="peptide-card">
+                    <div class="peptide-name">Melanotan II</div>
+                    <div class="peptide-benefits">Melanocortin agonist - tanning, appetite effects, libido (off-label popularity exceeds clinical use)</div>
+                </div>
+                <div class="peptide-card">
+                    <div class="peptide-name">Hexarelin</div>
+                    <div class="peptide-benefits">Strong GH pulse - cardioprotection claims, desensitization concerns, older generation</div>
+                </div>
+                <div class="peptide-card">
+                    <div class="peptide-name">Dihexa</div>
+                    <div class="peptide-benefits">Potent cognitive enhancer - 7-10 million times more potent than BDNF, synaptogenesis, animal data only</div>
+                </div>
+                <div class="peptide-card">
+                    <div class="peptide-name">P21 (CNTF Fragment)</div>
+                    <div class="peptide-benefits">Neurogenesis enhancer - memory consolidation, learning amplification, derived from CNTF, experimental status</div>
+                </div>
+                <div class="peptide-card">
+                    <div class="peptide-name">NAD+ (Injectable)</div>
+                    <div class="peptide-benefits">Cellular energy coenzyme - mitochondrial function, sirtuins, DNA repair, aging research (technically not a peptide)</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="legend">
+            <h3>📊 Tier Rankings Explained</h3>
+            <div class="legend-item"><strong>S-Tier:</strong> Clinical gold standards with extensive practitioner experience, proven synergies, and transformative results. Retatrutide is the ONLY GLP-1 in this tier - everything else is trash.</div>
+            <div class="legend-item"><strong>A-Tier:</strong> Strong clinical backing including mitochondrial optimizers, immune peptides, and reliable outcomes for specific health goals</div>
+            <div class="legend-item"><strong>B-Tier:</strong> Includes tirzepatide and semaglutide (both cause 40% lean mass loss and brutal rebound). If you MUST use a GLP-1 and can't access Retatrutide, these work but are medieval medicine with great marketing.</div>
+            <div class="legend-item"><strong>C-Tier:</strong> Effective for niche use cases, specialized peptides, moderate research support</div>
+            <div class="legend-item"><strong>D-Tier:</strong> Emerging research, limited long-term data, experimental status, or requires careful supervision</div>
+            <br>
+            <div style="margin-top: 15px; padding: 15px; background: #e3f2fd; border-radius: 8px; border-left: 4px solid #2196f3;">
+                <strong>🏗️ The Construction Crew Framework:</strong> Rankings reflect practitioner clinical experience where peptides work synergistically like a construction crew - TB-500 (general contractor), BPC-157 (elite repair crew), GHK-Cu (supply trucks), MOTS-C (power company), SS-31 (generator upgrade), Retatrutide (site cleanup). This isn't random stacking - it's strategic biological optimization.
+            </div>
+            <br>
+            <div style="margin-top: 10px; padding: 15px; background: #ffebee; border-radius: 8px; border-left: 4px solid #f44336;">
+                <strong>⚠️ GLP-1 Truth Bomb:</strong> Retatrutide (triple agonist) is the ONLY GLP-1 worth using. It preserves lean mass and increases energy expenditure by 20-25%. Semaglutide and tirzepatide cause 40% lean mass loss while "winning the battle by burning down the entire city." They're appetite suppressants that slow your metabolism - Retatrutide fixes the root cause. Don't settle for medieval medicine just because it has good marketing.
+            </div>
+        </div>
+        
+        <div class="disclaimer">
+            <strong>⚠️ Important Disclaimer:</strong> This tier list is for educational and research purposes only. These peptides are research chemicals not approved for human consumption. Rankings are based on available research, clinical reports, and community feedback. Individual results may vary significantly. Always consult qualified healthcare providers before considering any peptide protocols. Not medical advice.
+        </div>
+    </div>
+</body>
+</html>
